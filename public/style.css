@@ -1,0 +1,52 @@
+.container {
+    margin: 2rem;
+}
+
+nav {
+    display: flex;
+    justify-content: flex-end;
+}
+
+a {
+    margin: 1rem;
+}
+
+.blog {
+    text-decoration: none;
+    color: #000;
+}
+
+.blog h3, .blog p {
+    border-left: 2px solid rgb(18, 207, 176);
+    margin: 0;
+    padding-left: 1rem;
+}
+
+.blog:hover h3{
+    color: rgb(18, 207, 176)
+}
+
+.footer {
+    text-align: center;
+}
+
+label {
+    display: block;
+    margin-top: 1rem;
+}
+
+input,
+textarea {
+    font-family: inherit;
+    padding: .5rem;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    font-size: 1rem;
+}
+
+button {
+    display: block;
+    padding: .5rem 1rem;
+    background-color: rgb(46, 165, 180);
+}

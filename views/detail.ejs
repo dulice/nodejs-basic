@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('header') %>
+
+    <body>
+        <div class="container" id="about">
+            <%- include('nav') %>
+                <h2><%= blog.title %></h2>
+                <h2>
+                    <%= blog.snippet %>
+                </h2>
+                <h2>
+                    <%= blog.body %>
+                </h2>   
+                <a class="delete" href="/blogs" data-doc="<%= blog._id %> ">Delete</a>           
+        </div>
+        <%- include('footer') %>
+    </body>
+    <script>
+        const trash = document.querySelector(".delete");
+        trash.addEventListener("click", (e) => {
+            const endpoint = `/blogs/${trash.dataset.doc}`;
+           fetch(endpoint,  { 
+               method: "DELETE",
+           })
+           .then( response => {
+               response.json();
+           })
+           .then( data => {
+               window.location.href = data.redircet;
+           })
+           .catch(error => {
+               console.log(err);
+           })
+        })
+    </script>
+
+</html>

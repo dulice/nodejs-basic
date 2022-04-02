@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('header') %>
+<style>
+    .container {
+    margin: 2rem;
+}
+
+nav {
+    display: flex;
+    justify-content: flex-end;
+}
+
+a {
+    margin: 1rem;
+}
+
+.footer {
+    text-align: center;
+}
+
+label {
+    display: block;
+    margin-top: 1rem;
+}
+input, textarea {
+    font-family: inherit;
+    padding: .5rem;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    font-size: 1rem;
+}
+
+button {
+    display: block;
+    padding: .5rem 1rem;
+    background-color: rgb(46, 165, 180);
+}
+</style>
+<body>
+    <div class="container">
+        <%- include('nav') %>
+            <form action="/blogs" method="post">
+                <label for="title">Blog Title: </label>
+                <input type="text" placeholder="Title" name="title" id="title" required>
+                <label for="snippet">Blog Snippet: </label>
+                <input type="text" placeholder="Snippet" name="snippet" id="snippet" required>
+                <label for="body">Blog Body: </label>
+                <textarea name="body" id="body" cols="30" rows="10" placeholder="Body" required></textarea>
+                <button type="submit">Add Blog</button>
+            </form>
+    </div>
+    <%- include('footer') %>
+</body>
+</html>
